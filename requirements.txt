@@ -1,0 +1,5 @@
+google-generativeai==0.8.3
+gradio==5.9.1
+cryptography
+python-dotenv
+boto3

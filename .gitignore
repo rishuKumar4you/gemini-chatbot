@@ -1,0 +1,24 @@
+# Terraform
+terraform-folder/.terraform.lock.hcl
+terraform-folder/.terraform.tfstate
+terraform-folder/.terraform.tfstate.backup
+terraform-folder/terraform.tfstate
+terraform-folder/terraform.tfvars
+terraform-folder/.terraform/
+
+# Environment
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+chatbot-venv/
+venv/
+.venv/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
