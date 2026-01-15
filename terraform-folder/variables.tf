@@ -9,3 +9,8 @@ variable "gemini_model" {
   type        = string
   default     = "gemini-3-flash-preview"
 }
+
+variable "key_pair_name" {
+  description = "Name of the EC2 key pair for SSH access"
+  type        = string
+}

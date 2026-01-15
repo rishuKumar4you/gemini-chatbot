@@ -1,5 +1,8 @@
 # Gemini API key from https://aistudio.google.com/apikey
 gemini_api_key = "your-gemini-api-key-here"
 
-# Gemini model to use (optional, defaults to gemini-3-flash-preview)
+# Gemini model to use
 gemini_model = "gemini-3-flash-preview"
+
+# EC2 Key Pair name (create one in AWS Console -> EC2 -> Key Pairs)
+key_pair_name = "your-key-pair-name"
