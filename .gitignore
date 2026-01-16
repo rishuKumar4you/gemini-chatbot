@@ -1,7 +1,7 @@
 # Terraform
 terraform-folder/.terraform.lock.hcl
-terraform-folder/.terraform.tfstate
-terraform-folder/.terraform.tfstate.backup
+terraform-folder/terraform.tfstate
+terraform-folder/terraform.tfstate.backup
 terraform-folder/terraform.tfstate
 terraform-folder/terraform.tfvars
 terraform-folder/.terraform/
