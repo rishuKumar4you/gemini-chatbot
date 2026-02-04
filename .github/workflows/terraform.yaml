@@ -9,10 +9,12 @@ jobs:
   test-job:
     runs-on: ubuntu-latest
     steps:
-      - action: Repository Checkout
+      - name: Repository Checkout
         uses: actions/checkout@v3
-      - action: Setup Terraform
-        uses: hashicorp/setup-terraform@v3
+        with: 
+          fetch-depth: 1
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v4
       - name: Terraform Init
         run: |
           cd terraform-folder
