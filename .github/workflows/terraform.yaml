@@ -16,16 +16,56 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
       - name: Terraform Init
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: ${{ secrets.AWS_REGION }}
+          AWS_REGION: ${{ secrets.AWS_REGION }}
+          AWS_SECRET_NAME: ${{ secrets.AWS_SECRET_NAME }}
+          TF_VAR_gemini_api_key: ${{ secrets.TF_VAR_GEMINI_API_KEY }}
+          GEMINI_MODEL: ${{ env.GEMINI_MODEL }}
+          USE_SECRETS: ${{ env.USE_SECRETS }}
         run: |
           cd terraform-folder
           terraform init
       - name: Terraform Init
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: ${{ secrets.AWS_REGION }}
+          AWS_REGION: ${{ secrets.AWS_REGION }}
+          AWS_SECRET_NAME: ${{ secrets.AWS_SECRET_NAME }}
+          TF_VAR_gemini_api_key: ${{ secrets.TF_VAR_GEMINI_API_KEY }}
+          GEMINI_MODEL: ${{ env.GEMINI_MODEL }}
+          USE_SECRETS: ${{ env.USE_SECRETS }}      
         run: |
           cd terraform-folder
           terraform init
       - name: Terraform Plan
-        run: cd terraform-folder && terraform plan
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: ${{ secrets.AWS_REGION }}
+          AWS_REGION: ${{ secrets.AWS_REGION }}
+          AWS_SECRET_NAME: ${{ secrets.AWS_SECRET_NAME }}
+          TF_VAR_gemini_api_key: ${{ secrets.TF_VAR_GEMINI_API_KEY }}
+          GEMINI_MODEL: ${{ env.GEMINI_MODEL }}
+          USE_SECRETS: ${{ env.USE_SECRETS }}
+        run: | 
+          cd terraform-folder
+          terraform plan
       - name: Terraform Apply
-        run: cd terraform-folder && terraform apply
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: ${{ secrets.AWS_REGION }}
+          AWS_REGION: ${{ secrets.AWS_REGION }}
+          AWS_SECRET_NAME: ${{ secrets.AWS_SECRET_NAME }}
+          TF_VAR_gemini_api_key: ${{ secrets.TF_VAR_GEMINI_API_KEY }}
+          GEMINI_MODEL: ${{ env.GEMINI_MODEL }}
+          USE_SECRETS: ${{ env.USE_SECRETS }}
+        run: |
+          cd terraform-folder
+          terraform apply -auto-approve
 
 
