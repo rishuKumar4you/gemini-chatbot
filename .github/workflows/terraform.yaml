@@ -9,9 +9,16 @@ jobs:
   test-job:
     runs-on: ubuntu-latest
     steps:
+      - action: Repository Checkout
+        uses: actions/checkout@v3
+      - action: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
       - name: Terraform Init
         run: |
-          ls -l
+          cd terraform-folder
+          terraform init
+      - name: Terraform Init
+        run: |
           cd terraform-folder
           terraform init
       - name: Terraform Plan
